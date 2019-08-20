@@ -8,9 +8,13 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.renderscript.ScriptGroup;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,6 +37,28 @@ public class MainActivity extends AppCompatActivity {
 //                        .setAction("Action", null).show();
 //            }
 //        });
+    }
+
+    private void loadQuizSet() {
+        InputStream inputStream = null;
+        BufferedReader bufferedReader = null;
+        try {
+            inputStream = getAssets().open("quiz.txt");
+            bufferedReader = new BuffereReader(new InputStreamReader(inputStream));
+            String s;
+            while ((s = bufferedReader.readLine()) != null) {
+                quizSet.add(s.split("\t"));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (inputStrem != null) inputStream.close();
+                if (buffereReader != null) bufferedReader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 //    @Override
