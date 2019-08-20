@@ -25,9 +25,9 @@
         android:textSize="32sp"
         android:textStyle="bold"
         android:text="Question" />
-    
+
     <Button
-        android:id="0+ida/0Button"
+        android:id="@+id/a0Button"
         android:text="A0"
         android:onClick="checkAnswer"
         android:layout_weight="1"
@@ -35,7 +35,7 @@
         android:layout_height="0dp" />
 
     <Button
-        android:id="0+id/a1Button"
+        android:id="@+id/a1Button"
         android:text="A1"
         android:onClick="checkAnswer"
         android:layout_weight="1"
@@ -43,7 +43,7 @@
         android:layout_height="0dp" />
 
     <Button
-        android:id="0+id/a2Button"
+        android:id="@+id/a2Button"
         android:text="A2"
         android:onClick="checkAnswer"
         android:layout_weight="1"
